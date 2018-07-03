@@ -1,0 +1,322 @@
+.beers {
+	.container {
+		h1 {
+			max-width: calc(100vw - 2rem);
+		}
+		max-width: none;
+	}
+}
+.beer-col {
+	@media screen and (max-width: breakpoint-max(xs)) {
+		padding: 0;
+	}
+	@media screen and (max-width: breakpoint-max(md)) {
+		& + & {
+			margin-top: 3rem;
+		}
+	}
+	@media screen and (min-width: breakpoint-min(lg)) {
+		&:first-of-type {
+			padding-right: ($spacer-x/2);
+		}
+		&:last-of-type {
+			padding-left: ($spacer-x/2);
+		}
+	}
+}
+.beer {
+	position: relative;
+
+	& + & {
+		margin-top: 8vw;
+		@media screen and (min-width: breakpoint-min(sm)) {
+			margin-top: 8vw;
+		}
+		@media screen and (min-width: breakpoint-min(md)) {
+			margin-top: 6vw
+		}
+		@media screen and (min-width: breakpoint-min(lg)) {
+			margin-top: 4vw;
+		}
+		@media screen and (min-width: breakpoint-min(xl)) {
+			margin-top: 3.25rem;
+		}
+	}
+	&:after {
+		background-image: url("../svg/tri-border-black.svg");
+		background-size: auto auto;
+		background-position: right 60%;
+		background-repeat: no-repeat;
+		bottom: -49px;
+		content: '';
+		display: block;
+		height: 50px;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+	}
+	&.color-bg {
+		padding: $spacer-x;
+		& .description {
+			margin: 0 1rem 0 0;
+			@media screen and (min-width: breakpoint-min(sm)) {
+				margin: 0 3rem 0 0;
+			}
+			padding: $spacer-x;
+			position: relative;
+			z-index: 2;
+		}
+	}
+	h2 {
+		font-size: 6vw;
+		padding-right: 3rem;
+		text-transform: uppercase;
+		.name.font-marker {
+			letter-spacing: .075rem;
+		}
+		.style {
+			display: block;
+			font-size: 4vw;
+		}
+		@media screen and (min-width: breakpoint-min(sm)) {
+			font-size: 5vw;
+			padding-right: 5rem;
+			.style {
+				font-size: 3vw;
+			}
+		}
+		@media screen and (min-width: breakpoint-min(md)) {
+			font-size: 4vw;
+			.style {
+				display: inline;
+				font-size: 3vw;
+			}
+		}
+		@media screen and (min-width: breakpoint-min(lg)) {
+			font-size: 3vw;
+			.style {
+				display: block;
+				font-size: 2vw;
+			}
+		}
+		@media screen and (min-width: breakpoint-min(xl)) {
+			font-size: 2vw;
+			.style {
+				display: inline;
+				font-size: 1.5vw;
+			}
+		}
+
+	}
+	.label-img {
+		border: 10px solid black;
+		float: right;
+		margin: 0;
+		position: relative;
+		top: -1rem;
+		right: -1rem;
+		width: 4rem;
+		z-index: 0;
+		@media screen and (min-width: breakpoint-min(sm)) {
+			width: 6rem;
+		}
+	}
+	p {
+		margin: 0;
+		padding: 0;
+	}
+	p + p {
+		margin-top: 1rem;
+	}
+	.specs {
+			margin: 1rem 0 0 0;
+		ul {
+			background: rgba(255,255,255,.1);
+			margin: 0;
+			padding: .25rem 0;
+		}
+		li {
+			display: inline-block;
+			padding: 0 ($spacer-x);
+			width: 50%;
+			@media screen and (min-width: breakpoint-min(sm)) {
+				padding: 0 ($spacer-x * .75);
+				width: auto;
+			}
+			@media screen and (min-width: breakpoint-min(sm) + 100px) {
+				padding: 0 ($spacer-x);
+			}
+			@media screen and (min-width: breakpoint-min(lg)) {
+				width: 50%;
+			}
+			@media screen and (min-width: breakpoint-min(xl)) {
+				width: auto;
+			}
+		}
+	}
+	.keg {
+		margin: 0 .5rem;
+	}
+	.limited {
+		&:before, &:after {
+			content: '';
+			background-image: url('../svg/barley.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			display: inline-block;
+			height: 2rem;
+			opacity: .75;
+			margin: -.65rem 1rem;
+			width: .75rem;
+		}
+		&:before {
+			transform: rotate(-90deg);
+		}
+		&:after {
+			transform: rotate(90deg);
+		}
+	}
+}
+.keg-prices {
+	li:first-of-type {
+		border-bottom: solid 1px white;
+	}
+	@media screen and (max-width: 400px) {
+		ul {
+			margin: 1rem -1rem;
+		}
+	}
+
+	.name, .half, .sixth {
+		display: inline-block;
+	}
+	.name {
+		width: 100%;
+		&.ch {
+			display: none;
+		}
+		@media screen and (min-width: breakpoint-min(sm)) {
+			width: 50%;
+			&.ch {
+				display: inline-block;
+			}
+		}
+	}
+	.half, .sixth {
+		text-align: left;
+		vertical-align: top;
+		@media screen and (min-width: breakpoint-min(sm)) {
+			text-align: right;
+		}
+		width: 50%;
+		@media screen and (min-width: breakpoint-min(sm)) {
+			width: 25%;
+		}
+	}
+}
+.beer-icon {
+	height: 5rem;
+	position: absolute;
+	right: .5rem;
+	top: .5rem;
+	width: 3rem;
+	z-index: 0;
+
+	@media screen and (min-width: breakpoint-min(sm)) {
+		height: 8.5rem;
+		top: 1rem;
+		width: 5rem;
+	}
+
+	& .glass, & .body, & .medal {
+		position: absolute
+	}
+	& .glass {
+		top: 0;
+		right: 0;
+	}
+	& .body {
+		height: 4rem;
+		opacity: .9;
+		top: .9rem;
+		right: .2rem;
+		width: 90%;
+
+		@media screen and (min-width: breakpoint-min(sm)) {
+			height: 7.5rem;
+			right: .3rem;
+			top: 1.2rem;
+		}
+	}
+	& .medal {
+		top: 1rem;
+		right: .025rem;
+	}
+
+	&.srm01 {
+		svg.body, svg.body path {
+			fill: #FAEF6A;
+		}
+	}
+	&.srm05 {
+		svg.body, svg.body path {
+			fill: #FAC905;
+		}
+	}
+	&.srm10 {
+		svg.body, svg.body path {
+			fill: #F0A501;
+		}
+	}
+	&.srm15 {
+		svg.body, svg.body path {
+			fill: #D58701;
+		}
+	}
+	&.srm20 {
+		svg.body, svg.body path {
+			fill: #CB6600;
+		}
+	}
+	&.srm25 {
+		svg.body, svg.body path {
+			fill: #B54E0A;
+		}
+	}
+	&.srm30 {
+		svg.body, svg.body path {
+			fill: #9F3209;
+		}
+	}
+	&.srm35 {
+		svg.body, svg.body path {
+			fill: #821606;
+		}
+	}
+	&.srm40 {
+		svg.body, svg.body path {
+			fill: #620A08;
+		}
+	}
+	&.srm45 {
+		svg.body, svg.body path {
+			fill: #490504;
+		}
+	}
+	&.srm50 {
+		svg.body, svg.body path {
+			fill: #3D0303;
+		}
+	}
+	&.srm55 {
+		svg.body, svg.body path {
+			fill: #250302;
+		}
+	}
+	&.srm60 {
+		svg.body, svg.body path {
+			fill: #000000;
+		}
+	}
+}

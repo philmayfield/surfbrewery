@@ -1,0 +1,23 @@
+@mixin photo-background-image($img) {
+	background-image: linear-gradient(
+    	rgba(0, 0, 0, 0.5), 
+    	rgba(0, 0, 0, 0.5)
+    ), url($img + "_sm.jpg");
+	@media screen and (min-width: breakpoint-min(md)) {
+		background-image: 
+		linear-gradient(
+	    	rgba(0, 0, 0, 0.1), 
+	    	rgba(0, 0, 0, 0.9)
+	    ), url($img + ".jpg");
+	}
+}
+
+@mixin dark-bg($img) {
+	background-image: url($img + "_sm.jpg");
+	@media screen and (min-width: breakpoint-min(md)) {
+		background-image: url($img + ".jpg");
+	}
+	&.dark-bg {
+		@include photo-background-image($img);
+	}
+}

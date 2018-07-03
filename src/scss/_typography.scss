@@ -1,0 +1,61 @@
+// Fonts
+
+@font-face {
+    font-family: 'marker';
+    src: url('../fonts/markerfeltwide-webfont.eot');
+    src: url('../fonts/markerfeltwide-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/markerfeltwide-webfont.woff2') format('woff2'),
+         url('../fonts/markerfeltwide-webfont.woff') format('woff'),
+         url('../fonts/markerfeltwide-webfont.ttf') format('truetype'),
+         url('../fonts/markerfeltwide-webfont.svg#marker_feltwideregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.font-marker {
+	font-family: marker,Arial,Helvetica Neue,Helvetica,sans-serif;
+    font-weight: normal !important;
+}
+
+@font-face {
+    font-family: 'quicksandbold';
+    src: url('../fonts/quicksand-bold-webfont.eot');
+    src: url('../fonts/quicksand-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/quicksand-bold-webfont.woff2') format('woff2'),
+         url('../fonts/quicksand-bold-webfont.woff') format('woff'),
+         url('../fonts/quicksand-bold-webfont.ttf') format('truetype'),
+         url('../fonts/quicksand-bold-webfont.svg#quicksandbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.font-quicksand-bold, .bold, strong, b {
+    font-family: quicksandbold,Arial,Helvetica Neue,Helvetica,sans-serif;
+    font-weight: normal !important;
+}
+
+@font-face {
+    font-family: 'quicksandregular';
+    src: url('../fonts/quicksand-regular-webfont.eot');
+    src: url('../fonts/quicksand-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/quicksand-regular-webfont.woff2') format('woff2'),
+         url('../fonts/quicksand-regular-webfont.woff') format('woff'),
+         url('../fonts/quicksand-regular-webfont.ttf') format('truetype'),
+         url('../fonts/quicksand-regular-webfont.svg#quicksandregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.font-quicksand, body, .font-weight-normal {
+    font-family: quicksandregular,Arial,Helvetica Neue,Helvetica,sans-serif;
+    font-weight: normal !important;
+}
+
+// Font colors
+
+.t-white, a.t-white {
+    color: #FFF;
+}
+.t-pri {
+    color: $brand-primary;
+}
+.t-sec {
+    color: $brand-secondary;
+}

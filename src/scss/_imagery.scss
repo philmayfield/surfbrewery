@@ -1,0 +1,38 @@
+svg {
+	fill: $body-color;
+	display: inline-block;
+	height: auto;
+	width: 100%;
+}
+h3.icon {
+	padding-left: 2.5rem;
+	position: relative;
+	& svg {
+		height: 1.75rem;
+		position: absolute;
+		left: 0;
+		top: .1rem;
+		width: 1.75rem;
+		vertical-align: top;
+	}
+
+	&.icon-inline {
+		padding-left: 0;
+
+		& svg {
+			position: static;
+		}
+	}
+}
+p svg.inline {
+	height: 1rem;
+	width: 1rem;
+	vertical-align: text-top;
+}
+.responsive-img-full, .instagram-image {
+	height: auto;
+	max-width: 100%;
+}
+.responsive-img-full {
+	width: 100%;
+}

@@ -1,0 +1,172 @@
+$dt-font: 1.5rem;
+
+@media screen and (min-width: breakpoint-min(md)) {
+	.droptab-selector, .droptab-visible {
+		display: none !important;
+	}
+}
+@media screen and (max-width: breakpoint-max(sm)) {
+	.droptab-selector {
+		color: #FFF;
+		display: none;
+		height: ($dt-font*2);
+		margin: 0;
+		position: relative;
+
+		&.on {
+			display: block;
+		}
+	}
+
+	.droptab-small-menu {
+		background: $brand-secondary;
+		border-bottom: none;
+		height: 0;
+		margin: 0;
+		overflow: hidden;
+		text-align: left;
+		transition: all 500ms ease;
+
+		&.open {
+			height: auto;
+		}
+		li {
+			display: block;
+			-webkit-border-radius: 0;
+			border-radius: 0;
+			&.active {
+				background: rgba(255,255,255,.15);
+			}
+			& + & {
+				border-top: solid 1px rgba(255,255,255,.1);
+				margin: 0;
+			}
+			&.active a, a:hover {
+				border: none;
+			}
+		}
+	}
+
+	.droptab-menu a {
+		color: #FFF;
+		display: block;
+		font-size: ($dt-font*.8);
+		outline: none;
+		padding: 8px 15px; // pixels used for droptab calculations
+		width: 100%
+	}
+
+	.droptab-select-current {
+		font-size: $dt-font;
+		line-height: ($dt-font*2);
+		opacity: 1;
+		padding-left: $dt-font;
+		display: none;
+	}
+
+	.droptab-select-button {
+		background: $brand-primary;
+		cursor: pointer;
+		float: right;
+		min-height: 100%;
+		position: relative;
+		overflow: hidden;
+		text-indent: -999em;
+		transition: background .3s;
+		width: ($dt-font*2);
+
+		& > span {
+			display: block;
+			position: absolute;
+			top: ($dt-font*.9);
+			left: ($dt-font/2.5);
+			right: ($dt-font/2.5);
+			height: ($dt-font/5);;
+			background: white;
+			transition-duration: 0.3s;
+		    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+			&:before,
+			&:after {
+				position: absolute;
+				display: block;
+				left: 0;
+				width: 100%;
+				height: ($dt-font/5);
+				background-color: #fff;
+				content: "";
+				// transition-duration: 0.3s, 0.3s;
+				// transition-delay: 0.3s, 0s;
+			}
+
+			&:before {
+				top: -($dt-font/2.4);
+				transition: top 0.1s 0.34s ease-in,
+                			opacity 0.1s ease-in;
+			}
+
+			&:after {
+				bottom: -($dt-font/2.4);
+				transition: bottom 0.1s 0.34s ease-in,
+                			transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+			}
+
+			&, &:before, &:after {
+				willchange: transform;
+			}
+		}
+
+		.open & {
+			span {
+				transform: rotate(225deg);
+			    transition-delay: 0.14s;
+			    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+			}
+			span:before {
+				top: 0;
+				opacity: 0;
+				transition: top 0.1s ease-out,
+							opacity 0.1s 0.14s ease-out;
+			}
+			span:after {
+				bottom: 0;
+				transform: rotate(-90deg);
+				transition: bottom 0.1s ease-out,
+							transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+			}
+		}
+
+		// &:after {
+		// 	border-left: ($dt-font/2) solid transparent;
+		// 	border-right: ($dt-font/2) solid transparent;
+		// 	border-top: ($dt-font/2) solid #FFF;
+		// 	content: "";
+		// 	height: 0;
+		// 	position: absolute;
+		// 	right: ($dt-font/2);
+		// 	top: ($dt-font*.85);
+		// 	width: 0;
+		// }
+	}
+
+	.droptab-select-current, .droptab-select-button, .droptab-select-button:after {
+		transition: all 250ms ease;
+	}
+
+	.droptab-selector.open .droptab-select-button {
+		background: $brand-secondary;
+	}
+
+	.droptab-selector.open .droptab-select-button:after {
+		transform: rotate(180deg);
+		top: ($dt-font*.8);
+	}
+
+	.drop-tab-hidden {
+		opacity: 0;
+	}
+	
+	.droptab-visible {
+		display: inline-block;
+	}
+}

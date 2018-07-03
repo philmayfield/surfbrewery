@@ -1,0 +1,337 @@
+.angle-top {
+	padding: 3em 0 8em 0;
+	position: relative;
+
+	&.less-padding {
+		padding-bottom: 3em;
+	}
+}
+
+.white-bg {
+	background: #FFF;
+	a {
+		svg {
+			fill: $brand-primary;
+		}
+	}
+}
+.black-bg {
+	background: #000;
+}
+.primary-bg {
+	background: $brand-primary;
+}
+.secondary-bg {
+	background: $brand-secondary;
+}
+.black-bg, .primary-bg, .secondary-bg, .photo-bg {
+	color: #FFF;
+	a {
+		color: #FFF;
+		text-decoration: underline;
+		&:hover {
+			text-decoration-style: dashed;
+		}
+	}
+	.white-bg a {
+		color: $link-color;
+	}
+	svg {
+		fill: #FFF;
+	}
+}
+
+.angle-top {
+	&.white-bg, &.black-bg, &.primary-bg, &.secondary-bg, &.photo-bg {
+		&:before {
+			background-size: auto auto;
+			background-repeat: no-repeat;
+			background-position: top center;
+			content: '';
+			display: block;
+			height: 121px;
+			position: absolute;
+			pointer-events: none;
+			top: -120px;
+			width: 100%;
+			z-index: 1;
+
+			@media screen and (min-width: 1921px) {
+				background-size: cover;
+				height: 4.25vw;
+				top: -4.25vw;
+			}
+		}
+	}
+	&.photo-bg {
+		&:before {
+			background-position: bottom center;
+			top: -1px;
+		}
+	}
+	&.white-bg, &.white-bg + &.photo-bg {
+		&:before {
+			background-image: url("../svg/tri-border-white.svg");
+		}
+	}
+	&.black-bg, &.black-bg + &.photo-bg {
+		&:before {
+			background-image: url("../svg/tri-border-black.svg");
+		}
+	}
+	&.primary-bg, &.primary-bg + &.photo-bg {
+		&:before {
+			background-image: url("../svg/tri-border-primary.svg");
+		}
+	}
+	&.secondary-bg, &.secondary-bg + &.photo-bg {
+		&:before {
+			background-image: url("../svg/tri-border-secondary.svg");
+		}
+	}
+}
+
+.photo-bg {
+	background-attachment: scroll;
+	background-color: #000;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #FFF;
+	height: 40rem;
+	max-height: 40rem;
+	position: relative;
+	width: 100%;
+	will-change: transform;
+
+	@media screen and (min-width: 1025px) {
+		background-attachment: fixed;
+	}
+	&.parallax {
+		// background-position: 50% 50%;
+	}
+	&.with-text {
+		.container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			// top: 2rem;
+			height: 100%;
+		}
+	}
+	&.with-icon {
+		padding-top: 14rem;
+	}
+	// .photo-text {
+	// 	margin-top: 1rem;
+	// 	@media screen and (min-width: breakpoint-min(md)) {
+	// 		margin-top: 14rem;
+	// 	}
+	// }
+}
+
+.slide {
+	padding: 5rem 0 6rem 0;
+	@media screen and (min-width: breakpoint-min(md)) {
+		padding: 6rem 0 5rem 0;
+	}
+	@media screen and (min-width: breakpoint-min(lg)) {
+		padding: 6rem 0;
+	}
+	@media screen and (min-width: breakpoint-min(xl)) {
+		padding: 6rem 0;
+	}
+}
+
+.title-bg {
+	margin-top: 3rem;
+	padding: 30vw 0 40vw;
+	@media screen and (min-width: breakpoint-min(md)) {
+		margin-top: 0;
+		padding: 25vw 0 28vw 0;
+	}
+	@media screen and (min-width: breakpoint-min(lg)) {
+		padding: 20vw 0 22vw 0;
+	}
+	height: auto;
+	.title-holder {
+		@media screen and (min-width: breakpoint-min(sm)) {
+			display: inline-block;
+			position: relative;
+		}
+	}
+	h1 {
+		display: inline-block;
+		font-size: 10vw;
+		padding: 0 1rem;
+
+		@media screen and (min-width: breakpoint-min(sm)) {
+			background: rgba(0,0,0,.6);
+			border: 2px solid #FFF;
+			padding: .25rem 1rem;
+			font-size: 3rem;
+			&:before, &:after {
+				content: '';
+				background-image: url('../svg/barley.svg');
+				background-repeat: no-repeat;
+				background-size: contain;
+				display: inline-block;
+				height: 3rem;
+				position: absolute;
+				top: .55rem;
+				width: 1rem;
+			}
+			&:before {
+				transform: rotate(-90deg);
+				left: -1.65rem;
+			}
+			&:after {
+				transform: rotate(90deg);
+				right: -1.65rem;
+			}
+		}
+	}
+}
+
+.main-bg {
+	@include photo-background-image('../img/main_bg2');
+	height: auto;
+	max-height: none;
+	svg {
+		height: 20rem;
+		max-height: 20rem;
+	}
+}
+
+.beers-bg {
+	@include dark-bg('../img/beers_bg');
+}
+
+.events-bg {
+	@include dark-bg('../img/events_bg2');
+}
+
+.media-bg {
+	@include dark-bg('../img/media_bg');
+}
+
+.tastingroom-bg {
+	@include dark-bg('../img/tastingroom_bg');
+}
+
+.travel-bg {
+	@include dark-bg('../img/travel_bg');
+}
+
+.homebrewshop-bg {
+	@include dark-bg('../img/homebrewshop_bg');
+}
+
+.contact-bg {
+	@include dark-bg('../img/taps2_bg');
+}
+.virtualtour-bg {
+	@include dark-bg('../img/virtualtour2_bg');
+}
+
+.satellite-bg {
+	background-image: url('../img/satellite_bg_sm.jpg');
+	@media screen and (min-width: breakpoint-min(md)) {
+		background-image: url('../img/satellite_bg.jpg');
+	}
+}
+.fermenters-bg {
+	background-image: url('../img/fermenters_bg_sm.jpg');
+	@media screen and (min-width: breakpoint-min(md)) {
+		background-image: url('../img/fermenters_bg.jpg');
+	}
+}
+.band-bg {
+	background-image: url('../img/band_bg_sm.jpg');
+	@media screen and (min-width: breakpoint-min(md)) {
+		background-image: url('../img/band_bg.jpg');
+	}
+}
+.map-bg {
+	background-image: url('../img/map_bg_sm.jpg');
+	@media screen and (min-width: breakpoint-min(md)) {
+		background-image: url('../img/map_bg.jpg');
+	}
+}
+.growler-bg {
+	background-image: url('../img/growler_bg_sm.jpg');
+	@media screen and (min-width: breakpoint-min(md)) {
+		background-image: url('../img/growler_bg.jpg');
+	}
+}
+.pints-bg {
+	background-image: url('../img/pints_bg_sm.jpg');
+	@media screen and (min-width: breakpoint-min(md)) {
+		background-image: url('../img/pints_bg.jpg');
+	}
+}
+.grains-bg {
+	background-image: url('../img/grains_bg_sm.jpg');
+	@media screen and (min-width: breakpoint-min(md)) {
+		background-image: url('../img/grains_bg.jpg');
+	}
+}
+.grain-bg {
+	background-image: url('../img/grain_bg_sm.jpg');
+	@media screen and (min-width: breakpoint-min(md)) {
+		background-image: url('../img/grain_bg.jpg');
+	}
+}
+// .virtualtour-bg {
+// 	background-image: url('../img/virtualtour_bg_sm.jpg');
+// 	@media screen and (min-width: breakpoint-min(md)) {
+// 		background-image: url('../img/virtualtour_bg.jpg');
+// 	}
+// }
+
+.glass-circle {
+	display: block;
+	height: 90px;
+	left: 50%;
+	margin: 0 0 0 -45px;
+	padding: 1.5rem;
+	position: absolute;
+	top: -70px;
+	width: 90px;
+	z-index: 1;
+
+	&.divider {
+		margin-bottom: -90px;
+		position: relative;
+		top: -95px;
+	}
+
+	&.surf, .photo-bg & {
+		padding: 1rem;
+	}
+
+	svg {
+		height: 100%;
+	}
+
+	.white-bg & {
+		background: #FFF;
+		svg {
+			fill: $body-color;
+		}
+	}
+	.black-bg & {
+		background: #000;
+	}
+	.primary-bg & {
+		background: $brand-primary;
+	}
+	.secondary-bg & {
+		background: $brand-secondary;
+	}
+	.photo-bg & {
+		top: 50px;
+	}
+}
